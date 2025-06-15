@@ -105,7 +105,7 @@ function displayProductDetail() {
 }
 
 function addToCart(product, color, size){
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
     const existingItem = cart.find(item => item.id === product.id && item.color === color.name && item.size === size);
 
@@ -123,11 +123,13 @@ function addToCart(product, color, size){
         });
     }
     
-    localStorage.setItem("cart", JSON.stringify(cart));
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartBadge();
 }
 
 function displayCart() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
     const cartTableBody = document.querySelector(".cart-table tbody");
     const subtotalEL = document.querySelector(".subtotal");
@@ -177,8 +179,9 @@ function displayCart() {
             } else {
                 cart.splice(index, 1);
             }
-            localStorage.setItem("cart", JSON.stringify(cart));
+            sessionStorage.setItem("cart", JSON.stringify(cart));
             displayCart(); // Refresh the cart display
+            updateCartBadge();
         });
 
         // Add event listener to quantity input
@@ -187,8 +190,9 @@ function displayCart() {
             const newQuantity = parseInt(e.target.value);
             if (newQuantity > 0) {
                 cart[index].quantity = newQuantity;
-                localStorage.setItem("cart", JSON.stringify(cart));
+                sessionStorage.setItem("cart", JSON.stringify(cart));
                 displayCart(); // Refresh the cart display
+                updateCartBadge();
             }
         });
     });
@@ -196,3 +200,20 @@ function displayCart() {
     subtotalEL.textContent = `$${subtotal.toFixed(2)}`;
     grandTotalEL.textContent = `$${subtotal.toFixed(2)}`;
 }
+
+function updateCartBadge() {
+    const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    const badge = document.querySelector(".cart-item-count");
+    
+    if (badge) {
+        if (cartCount > 0) {
+            badge.textContent = cartCount;
+            badge.style.display = "block";
+        } else {
+            badge.style.display = "none";
+        }
+    }
+}
+
+updateCartBadge();
