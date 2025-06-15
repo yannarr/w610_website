@@ -147,7 +147,9 @@ function displayCart() {
     let subtotal = 0;
 
     cart.forEach((item, index) => {
-        const itemTotal = parseFloat(item.price.replace("$", "")) * item.quantity;
+        // Extract numeric value from price string (handles 'ksh', 'Ksh', spaces, '/=', etc.)
+        const numericPrice = parseFloat((item.price.match(/\d+(?:\.\d+)?/g) || [0])[0]);
+        const itemTotal = numericPrice * item.quantity;
         subtotal += itemTotal;
         
         const cartItem = document.createElement("tr");
@@ -165,7 +167,7 @@ function displayCart() {
             </td>
             <td class="price">${item.price}</td>
             <td class="quantity"><input type="number" value="${item.quantity}" min="1" data-index="${index}"></td>
-            <td class="total-price">$${itemTotal.toFixed(2)}</td>
+            <td class="total-price">ksh ${itemTotal.toFixed(2)}</td>
             <td><button class="remove" data-index="${index}"><i class="ri-close-line"></i></button></td>
         `;
 
@@ -197,8 +199,8 @@ function displayCart() {
         });
     });
 
-    subtotalEL.textContent = `$${subtotal.toFixed(2)}`;
-    grandTotalEL.textContent = `$${subtotal.toFixed(2)}`;
+    subtotalEL.textContent = `ksh ${subtotal.toFixed(2)}`;
+    grandTotalEL.textContent = `ksh ${subtotal.toFixed(2)}`;
 }
 
 function updateCartBadge() {
