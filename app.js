@@ -18,7 +18,7 @@ function displayProducts() {
         productCard.classList.add("product-card");
         productCard.innerHTML = `
         <div class="img-box">
-            <img src = "${product.colors[0].mainImage}">
+            <img src = "assets/img/cart-2.png">
         </div>
         <h2 class="title">${product.title}</h2>
         <span class="price">${product.price}</span>
@@ -154,7 +154,7 @@ function displayCart() {
         cartItem.classList.add("cart-item");
         cartItem.innerHTML = `
             <td class="product">
-                <img src="${item.image}" alt="${item.title}">
+                <img src="assets/img/cart-2.png" alt="${item.title}">
                 <div class="item-detail">
                     <p>${item.title}</p>
                     <div class="size-color-box">

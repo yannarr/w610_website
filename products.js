@@ -1,57 +1,57 @@
 const products = [
     {
         id: 1,
-        title: "Men Casual Round Neck T-Shirt",
-        price: "$100",
+        title: "Shea Butter",
+        price: "ksh 1750",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam laborum aut explicabo molestias voluptas, eum nulla doloremque laboriosam. Accusantium omnis illum nulla architecto doloribus.",
         colors: [
             {
                 name: "Green",
-                mainImage: "images/product1_green_1.jpg",
+                mainImage: "assets/img/cart-2.png",
                 thumbnails: [
-                    "images/product1_green_2.jpg",
-                    "images/product1_green_3.jpg",
-                    "images/product1_green_4.jpg"
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png"
                 ],
-                sizes: ["S", "M", "L", "XL", "XXL"]
+                sizes: ["S", "M"]
             },
             {
                 name: "Yellow",
-                mainImage: "images/product1_yellow_1.jpg",
+                mainImage: "assets/img/cart-2.png",
                 thumbnails: [
-                    "images/product1_yellow_2.jpg",
-                    "images/product1_yellow_3.jpg",
-                    "images/product1_yellow_4.jpg"
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png"
                 ],
                 sizes: ["S", "M", "L", "XL", "XXL"]
             },
             {
                 name: "Red",
-                mainImage: "images/product1_red_1.jpg",
+                mainImage: "assets/img/cart-2.png",
                 thumbnails: [
-                    "images/product1_red_2.jpg",
-                    "images/product1_red_3.jpg",
-                    "images/product1_red_4.jpg"
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png"
                 ],
                 sizes: ["S", "M", "L", "XL", "XXL"]
             },
             {
                 name: "White",
-                mainImage: "images/product1_white_1.jpg",
+                mainImage: "assets/img/cart-2.png",
                 thumbnails: [
-                    "images/product1_white_2.jpg",
-                    "images/product1_white_3.jpg",
-                    "images/product1_white_4.jpg"
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png"
                 ],
                 sizes: ["S", "L"]
             },
             {
                 name: "Maroon",
-                mainImage: "images/product1_maroon_1.jpg",
+                mainImage: "assets/img/cart-2.png",
                 thumbnails: [
-                    "images/product1_maroon_2.jpg",
-                    "images/product1_maroon_3.jpg",
-                    "images/product1_maroon_4.jpg"
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png"
                 ],
                 sizes: ["M", "L", "XL"]
             }
@@ -65,11 +65,11 @@ const products = [
         colors: [
             {
                 name: "Blue",
-                mainImage: "images/product2_blue_1.jpg",
+                mainImage: "assets/img/cart-2.png",
                 thumbnails: [
-                    "images/product2_blue_2.jpg",
-                    "images/product2_blue_3.jpg",
-                    "images/product2_blue_4.jpg"
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png",
+                    "assets/img/cart-2.png"
                 ],
                 sizes: ["M", "L", "XL"]
             }
@@ -83,8 +83,8 @@ const products = [
         colors: [
             {
                 name: "Grey",
-                mainImage: "images/product3_grey_1.jpg",
-                thumbnails: [],
+                mainImage: "assets/img/cart-2.png",
+                thumbnails: ["assets/img/cart-2.png", "assets/img/cart-2.png", "assets/img/cart-2.png"],
                 sizes: ["S", "M", "L", "XL", "XXL"]
             }
         ]
@@ -97,8 +97,8 @@ const products = [
         colors: [
             {
                 name: "Green",
-                mainImage: "images/product4_green_1.jpg",
-                thumbnails: [],
+                mainImage: "assets/img/cart-2.png",
+                thumbnails: ["assets/img/cart-2.png", "assets/img/cart-2.png", "assets/img/cart-2.png"],
                 sizes: ["S", "M", "L", "XL", "XXL"]
             }
         ]
@@ -111,8 +111,8 @@ const products = [
         colors: [
             {
                 name: "Black",
-                mainImage: "images/product5_black_1.jpg",
-                thumbnails: [],
+                mainImage: "assets/img/cart-2.png",
+                thumbnails: ["assets/img/cart-2.png", "assets/img/cart-2.png", "assets/img/cart-2.png"],
                 sizes: ["S", "M", "L", "XL", "XXL"]
             }
         ]
@@ -125,38 +125,11 @@ const products = [
         colors: [
             {
                 name: "Brown",
-                mainImage: "images/product6_brown_1.jpg",
-                thumbnails: [],
+                mainImage: "assets/img/cart-2.png",
+                thumbnails: ["assets/img/cart-2.png", "assets/img/cart-2.png", "assets/img/cart-2.png"],
                 sizes: ["S", "M", "L", "XL", "XXL"]
             }
         ]
     },
-    {
-        id: 7,
-        title: "Men Casual Short Sleeve Polo",
-        price: "$62",
-        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam laborum aut explicabo molestias voluptas, eum nulla doloremque laboriosam. Accusantium omnis illum nulla architecto doloribus.",
-        colors: [
-            {
-                name: "Blue",
-                mainImage: "images/product7_blue_1.jpg",
-                thumbnails: [],
-                sizes: ["S", "M", "L", "XL", "XXL"]
-            }
-        ]
-    },
-    {
-        id: 8,
-        title: "Men Summer Leaf Pattern T-Shirt",
-        price: "$70",
-        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam laborum aut explicabo molestias voluptas, eum nulla doloremque laboriosam. Accusantium omnis illum nulla architecto doloribus.",
-        colors: [
-            {
-                name: "Green",
-                mainImage: "images/product8_green_1.jpg",
-                thumbnails: [],
-                sizes: ["S", "M", "L", "XL", "XXL"]
-            }
-        ]
-    }
+ 
 ];
