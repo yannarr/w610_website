@@ -1,0 +1,73 @@
+npm run watch -- to save all content
+
+
+
+
+
+
+<!-- for diagonal images in background  -->
+
+<div class="absolute bottom-0 -right-12 opacity-90 lg:hidden">
+    <img src="assets/img/leaf-1.png" alt="leaf image" class="w-32" />
+  </div>
+  <div class="absolute -top-5 -left-5 rotate-90 opacity-90 lg:hidden">
+    <img src="assets/img/leaf-2.png" alt="leaf image" class="w-32" />
+  </div>
+</div>
+
+
+<!-- how to add image in text from remixicon -->
+<div
+class="flex flex-col gap-2 sm:flex-row md:gap-4 lg:pt-5 xl:pt-10"
+>
+<button class="btn">
+  <span>Shop Now</span>
+  <i class="ri-leaf-line"></i>
+</button>
+<button class="btn btn_outline">
+  <span>Know More</span>
+  <i class="ri-leaf-line"></i>
+</button>
+</div>
+
+<!-- floating plant no.140 in the background -->
+                <!--plant-->
+                <div
+                  class="absolute -top-10 right-0 opacity-30 animate-movingY hidden"
+                >
+                  <i class="ri-plant-line text-6xl text-brown-500"></i>
+                </div>
+              </div>
+              <!--plant-->
+              <div
+                class="hidden absolute -top-10 -left-5 opacity-30 lg:block animate-movingY"
+              >
+                <i class="ri-plant-line text-6xl text-brown-500"></i>
+              </div>   </div>
+
+
+
+<!-- for the sliding animation  -->
+sr.reveal(
+  `.home__data, .about__top, .popular__top, .review__top, review__swiper, .footer__icon, .footer__content,.copy__right`,
+  { interval: 100 }
+);
+
+sr.reveal(`.home__image`, { delay: 1000, scale: 1, origin: "top" });
+
+sr.reveal(`.service__card`, { interval: 100 });
+
+sr.reveal(`.about__leaf`, { delay: 1000, origin: "right" });
+sr.reveal(`.about__item__1-content, .about__item__2-content `, {
+  origin: "right",
+});
+sr.reveal(`.about__item__2-img, .about__item__1-img`, { origin: "left" });
+sr.reveal(`.about__item__3-img, .about__item__4-img`, { origin: "left" });
+sr.reveal(`.about__item__4-content, .about__item__3-content`, {
+  origin: "right",
+});
+
+sr.reveal(`.review__leaf`, { delay: 1000, origin: "left" });
+sr.reveal(`.footer__floral`, { delay: 1500, origin: "right" });
+
+sr.reveal(".ingredients__item", { origin: "left", delay: 300, interval: 200 });

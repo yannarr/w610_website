@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--~~~~~~~~~~~~~~~ Favicon ~~~~~~~~~~~~~~~-->
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <!--~~~~~~~~~~~~~~~ Remix Icon ~~~~~~~~~~~~~~~-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <!-- Use Tailwind CDN for testing -->
+    <style>
+      /* Custom transition for mobile menu */
+      #nav-menu {
+        transition: transform 0.3s ease-in-out;
+      }
+    </style>
+
+    <!--~~~~~~~~~~~~~~~ Swiper's CSS ~~~~~~~~~~~~~~~-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="./output.css" />
+    <title>Body Butter</title>
+  </head>
+
+  <body class="text-white flex-wrap">
+    <!--~~~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~~~-->
+    <header id="navbar" class="fixed w-full top-0 left-0 z-50 bg-none">
+      <nav class="container flex items-center justify-between h-16 sm:h-20">
+        <div class="flex items-center gap-2">
+          <img src="assets/img/icon.png" 
+               alt="610 Body Butter Logo"
+               class="h-12 sm:h-14 w-auto object-contain">
+          <span class="text-3xl font-Lobster sm:text-2xl ">Body Butter</span>
+        </div>
+        <!-- Updated Nav Menu -->
+        <div
+          id="nav-menu"
+          class="fixed top-0 left-0 w-full min-h-screen flex items-center justify-center -translate-x-full origin-left lg:static lg:min-h-fit lg:bg-transparent lg:m-auto overflow-hidden lg:translate-x-0 sm:backdrop-blur lg:backdrop-blur-0 flex-wrap"
+        >
+          <ul
+            class="text-2xl flex flex-col items-center gap-8 lg:flex-row font-Jost"
+          >
+            <li><a href="#home" class="nav-link active">HOME</a></li>
+            <li><a href="#about" class="nav-link">ABOUT</a></li>
+            <li><a href="#ingredients" class="nav-link">INGREDIENTS</a></li>
+            <l><a href="#popular" class="nav-link">POPULAR</a></l
+            <li><a href="#review" class="nav-link">REVIEW</a></li>
+          </ul>
+        </div>
+
+        <!-- Hamburger Button -->
+        <button
+          id="hamburger"
+          class="text-xl sm:text-3xl cursor-pointer z-50 lg:hidden background-blur-3xl"
+          aria-label="Toggle menu"
+        >
+          <i class="ri-menu-4-line"></i>
+        </button>
+      </nav>
+    </header>
+    <main class="mt-5">
+      <!--~~~~~~~~~~~~~~~ Home ~~~~~~~~~~~~~~~-->
+      <section id="home" class="relative ">
+        <div class="container">
+          <!--Blob 1-->
+          <div
+            class="w-64 h-64 bg-cream-700 rounded-full blur-3xl -z-10 opacity-40 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          ></div>
+
+          <!--Blob 2-->
+          <section id="home1" class="relative pt-0">
+            <div class="container">
+              <!-- Blob circle 1 -->
+              <div
+                class="w-64 h-64 bg-brown-700 rounded-full blur-3xl -z-10 opacity-40 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              ></div>
+              <!-- Blob circle 2 -->
+              <div
+                class="w-64 h-64 bg-brown-700 rounded-full blur-3xl -z-10 opacity-40 absolute right-0 bottom-0"
+              ></div>
+              <div class="flex flex-col items-center gap-5 lg:flex-row">
+                <!-- Content -->
+                <div class="home__data w-full space-y-3 lg:w-1/2 ">
+                  <h1>
+                    <span class="text-red-950">Nourish</span> Your Skin<br />
+                    Naturally with Luxurious<span class="text-red-950">
+                      Ghanian</span
+                    >
+                    Body Butter
+                    <br />
+                  </h1>
+                  <p class="text-xl text-white font-Jost">
+                    Experience the richness of handcrafted body butter, made
+                    with nourishing ingredients for soft, glowing skin.
+                  </p>
+                  <div
+                    class="flex flex-col gap-2 sm:flex-row md:gap-4 lg:pt-5 xl:pt-10"
+                  >
+                    <a href="app.html" class="btn">Shop Now</a>
+                  </div>
+                  <div class="flex items-center gap-5 text-lg lg:pt-10">
+                    <i
+                      class="ri-facebook-fill text-slate-100 hover:text-gold-500 duration-300 cursor-pointer"
+                    ></i>
+                    <i
+                      class="ri-twitter-x-fill text-slate-100 hover:text-gold-500 duration-300 cursor-pointer text-base"
+                    ></i>
+                    <i
+                      class="ri-instagram-fill text-slate-100 hover:text-gold-500 duration-300 cursor-pointer"
+                    ></i>
+                    <i
+                      class="ri-linkedin-fill text-slate-100 hover:text-gold-500 duration-300 cursor-pointer"
+                    ></i>
+                  </div>
+                </div>
+                <div
+                  class="w-4/6 md:w-2/3 lg:w-1/2 relative opacity-70 custom-style"
+                >
+                  <img
+                    src="assets/img/cart-2.png  "
+                    alt="home_image"
+                    class="home__image w-4/6 sm:w-96 lg:w-full h-auto mx-auto rounded-md"
+                  />
+                </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!--~~~~~~~~~~~~~~~ Services ~~~~~~~~~~~~~~~-->
+      <div class="bg-brown-500 text-cream-100 py-10">
+        <h2 class="text-gold-500 title text-4xl text-center mb-10 md:mb-20">
+          Why Choose Us
+        </h2>
+        <div
+          class="container gap-8 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        >
+          <!--card 1 -->
+          <div
+            class="service__card border border-brown-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:bg-translate-y-1 duration-300 space-y-5"
+          >
+            <div class="flex items-center gap-5">
+              <i class="ri-truck-line text-3xl md:text-4xl xl:text-5xl"></i>
+              <p class="md:text-lg font-bold">
+                Fast <br />
+                Delivery
+              </p>
+            </div>
+            <p class="font-Jost">
+              Enjoy fast delivery of our meticulously crafted body butter,
+              ensuring you receive the nourishing benefits of nature's finest
+              ingredients right at your doorstep.
+            </p>
+          </div>
+
+          <!--card 2 -->
+          <div
+            class="service__card border border-brown-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:bg-translate-y-1 duration-300 space-y-5"
+          >
+            <div class="flex items-center gap-5">
+              <i
+                class="ri-customer-service-line text-3xl md:text-4xl xl:text-5xl"
+              ></i>
+              <p class="md:text-lg font-bold">
+                Great Customer <br />
+                Service
+              </p>
+            </div>
+            <p class="font-Jost">
+              Experience exceptional customer service from our passionate team,
+              guiding you to find the perfect body butter for your skin's unique
+              needs.
+            </p>
+          </div>
+
+          <!--card 3 -->
+          <div
+            class="service__card border border-brown-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:bg-translate-y-1 duration-300 space-y-5"
+          >
+            <div class="flex items-center gap-5">
+              <i class="ri-plant-line text-3xl md:text-4xl xl:text-5xl"></i>
+              <p class="md:text-lg font-bold">
+                Original <br />
+                Plants
+              </p>
+            </div>
+            <p class="font-Jost">
+              Our body butters are crafted using original, sustainably sourced
+              plants and butters, capturing the essence of nature in every jar.
+            </p>
+          </div>
+
+          <!--card 4 -->
+          <div
+            class="service__card border border-brown-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:bg-translate-y-1 duration-300 space-y-5"
+          >
+            <div class="flex items-center gap-5">
+              <i
+                class="ri-money-dollar-circle-line text-3xl md:text-4xl xl:text-5xl"
+              ></i>
+              <p class="md:text-lg font-bold">
+                Affordable <br />
+                Price
+              </p>
+            </div>
+            <p class="font-Jost">
+              Enjoy luxurious, all-natural body butter at an affordable price.
+              Our quality blends ensure effective care without compromising your
+              budget.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!--~~~~~~~~~~~~~~~ About us ~~~~~~~~~~~~~~~-->
+      <section
+        id="about"
+        class="relative overflow-hidden items-center flex-wrap"
+      >
+        <div class="about__leaf absolute -top-8 -right-12 opacity-90">
+          <img
+            src="assets/img/leaf-3.png"
+            alt="leaf_image"
+            class="w-40 md:w-52 xl:w-64"
+          />
+        </div>
+
+        <div
+          class="about__top flex flex-col items-center gap-3 text-center mb-10 md:mb-20"
+        >
+          <h2 class="title text-3xl text-orange-950">About Us</h2>
+          <p class="max-w-3xl text-2xl">
+            We create luxurious, handcrafted body butters with nature's best
+            ingredients to nourish and rejuvenate your skin.
+          </p>
+        </div>
+
+        <div>
+          <!-- item1 -->
+          <div class="flex flex-col items-center lg:flex-row gap-5">
+            <!-- image -->
+            <div class="about__item__1-img w-full lg:w-1/2">
+              <!-- Changed from w-1/4 lg:w-3/2 -->
+              <img
+                src="assets/img/plant-11.png"
+                alt="about_image"
+                class="w-1/3 sm:w-1/3 lg:w-1/3 xl:w-1/4 mx-auto opacity-70"
+                style="max-width: 820px;"
+              />
+            </div>
+            <!-- content -->
+            <div class="about__item__1-content w-full lg:w-1/2">
+              <div class="space-y-5 text-xl">
+                <h3 class="font-bold">
+                  Skin <span class="text-red-950">Transformation</span> <br />
+                </h3>
+                <p class="text-white">
+                  We believe in the power of natural ingredients and sustainable
+                  practices to create products that truly care for your skin.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- item2 -->
+          <div class="flex flex-col items-center lg:flex-row gap-5">
+            <!-- image -->
+            <div class="about__item__2-img w-full lg:w-1/2">
+              <!-- Changed from w-1/4 lg:w-3/2 -->
+              <img
+                src="assets/img/plant-22.png"
+                alt="about_image"
+                class="w-1/2 sm:w-1/3 lg:w-2/3 xl:w-1/2 mx-auto opacity-70"
+              />
+            </div>
+            <!-- content -->
+            <div class="about__item__2-content w-full lg:w-1/2 text-xl">
+              <div class="space-y-5">
+                <h3 class="font-bold">
+                  Ethical <span class="text-red-950">Origins</span>
+                  <br />
+                </h3>
+                <p class="text-white">
+                  We partner directly with women-led cooperatives in Ghana,
+                  ensuring fair wages and sustainable harvesting practices.
+                  Every purchase supports traditional craftsmanship and
+                  community development.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- item3 -->
+          <div class="flex flex-col items-center lg:flex-row gap-5">
+            <!-- image -->
+            <div class="about__item__3-img w-full lg:w-1/2">
+              <!-- Changed from w-1/4 lg:w-3/2 -->
+              <img
+                src="assets/img/plant-12.png"
+                alt="about_image"
+                class="w-1/2 sm:w-1/3 lg:w-2/3 xl:w-1/2 mx-auto opacity-70"
+              />
+            </div>
+            <!-- content -->
+            <div class="about__item__3-content w-full lg:w-1/2 text-xl">
+              <div class="space-y-5">
+                <h3 class="font-bold">
+                  Nature's <span class="text-red-950">Potency</span> <br />
+                  Preserved
+                </h3>
+                <p class="text-white">
+                  Through slow, small-batch processing, we maintain the
+                  integrity of our natural ingredients.Each butter blend is
+                  infused with organic oils and botanical extracts for enhanced
+                  skin benefits.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- item4 -->
+          <div class="flex flex-col items-center lg:flex-row gap-5">
+            <!-- image -->
+            <div class="about__item__4-img w-full lg:w-1/2">
+              <!-- Changed from w-1/4 lg:w-3/2 -->
+              <img
+                src="assets/img/plant-1.png"
+                alt="about_image"
+                class="w-1/3 sm:w-1/3 lg:w-2/3 xl:w-1/2 mx-auto opacity-70"
+              />
+            </div>
+            <!-- content -->
+            <div class="about__item__4-content w-full lg:w-1/2 text-xl">
+              <div class="space-y-5">
+                <h3 class="font-bold">
+                  From Nut to <span class="text-red-950">Nourishment</span>
+                  <br />
+                </h3>
+                <p class="text-white">
+                  We start with premium raw shea nuts, carefully sorted and
+                  cold-pressed to preserve their natural vitamins and fatty
+                  acids. Our traditional extraction methods ensure maximum
+                  potency in every batch.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--~~~~~~~~~~~~~~~ Ingredients ~~~~~~~~~~~~~~~-->
+      <section id="ingredients" class="ingredients-section">
+        <div class="ingredients__top container text- "></div>
+            <h2 class="title text-4xl text-orange-950 text-center">
+            Ingredients And Their Benefits
+            </h2>
+
+          <p class="max-w-2xl mx-auto text-slate-100 mt-4 mb-10 text-xl"> <!-- Added mb-10 -->
+            Discover the natural ingredients behind our luxurious body butters.
+          </p>
+          
+          <!-- Added spacing wrapper -->
+          <div class="space-y-12">  <!-- Added spacing container -->
+            <div class="grid gap-y-8 sm:gap-6 md:gap-8 grid-cols-1 md:grid-cols-2">
+              <!-- Ingredient 1 -->
+              <div class="p-6 bg-brown-700 rounded-lg">
+          <h3 class="text-xl font-semibold text-orange-950">
+            Ghanian Shea Butter
+          </h3>
+          <p class="text-white mt-2">
+            Rich in vitamins A, E, and F, offering deep nourishment and moisture
+            Soothes dry, irritated, or inflamed skin and improves overall texture
+            Helps reduce the appearance of scars, stretch marks, and fine lines
+          </p>
+              </div>
+            <!-- Ingredient 2 -->
+            <div class="p-6 bg-brown-700 rounded-lg">
+              <h3 class="text-xl font-semibold text-orange-950">
+          Grapeseed Oil
+              </h3>
+              <p class="text-cream-100 mt-2">
+          Lightweight and easily absorbed, ideal for all skin types
+          Rich in antioxidants and vitamin E to help protect against free radicals
+          Balances oil production and tightens skin for a firmer appearance
+              </p>
+            </div>
+            <!-- Ingredient 3 -->
+            <div class="p-6 bg-brown-700 rounded-lg">
+              <h3 class="text-xl font-semibold text-orange-950">
+          Vitamin E Oil
+              </h3>
+              <p class="text-cream-100 mt-2">
+          Potent antioxidant that supports skin repair and rejuvenation
+          Promotes healing of scars, fine lines, and wrinkles
+          Deeply moisturizes and strengthens the skin's natural barrier
+              </p>
+            </div>
+            <!-- Ingredient 4 -->
+            <div class="p-6 bg-brown-700 rounded-lg">
+              <h3 class="text-xl font-semibold text-orange-950">Baobab Oil</h3>
+              <p class="text-cream-100 mt-2">
+          Packed with essential fatty acids (omega-3, 6, and 9) for intense hydration
+          Contains vitamins A, D, E, and F to promote skin regeneration
+          Enhances skin elasticity and soothes inflammation for smoother skin
+              </p>
+            </div>
+            <!-- Ingredient 5 -->
+            <div class="p-6 bg-brown-700 rounded-lg">
+              <h3 class="text-xl font-semibold text-orange-950">Apricot Oil</h3>
+              <p class="text-cream-100 mt-2">
+            Lightweight and non-greasy, making it perfect for sensitive skin
+            High in vitamins A and E to support skin regeneration and hydration
+            Helps soothe inflammation and improve skin tone without clogging pores
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--~~~~~~~~~~~~~~~ Popular ~~~~~~~~~~~~~~~-->
+      <section id="popular">
+        <div
+          class="popular__top flex flex-col items-center gap-3 text-center mb-40 md:mb-28"
+        >
+          <h2 class="title text-4xl text-orange-950">
+            Your Choice Body Butter
+          </h2>
+          <p class="max-w-2xl text-2xl">
+            Handcrafted blends made with nature's finest ingredients.
+          </p>
+        </div>
+        <div
+          class="container w-full grid grid-col-1 gap-x-8 gap-y-36 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        >
+          <!-- card 1 -->
+          <div
+            class="popular__top popular_card bg-red-950 p-10 pt-24 rounded-md relative"
+          >
+            <img
+              src="assets/img/cart-2.png"
+              alt="popular_image"
+              class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500"
+            />
+            <p class="text-2xl">Shea Butter</p>
+            <h3>The Hydration Hero</h3>
+            <div>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+              <i class="ri-star-line text-gray-400"></i>
+              <i class="ri-star-line text-gray-400"></i>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-xl font-Lobster">1750/= ksh</p>
+              <a
+                href="app.html"
+                class="bg-brown-500 px-2 py-1 rounded-sm text-x1 ri-shopping-cart-fill"
+                title="Add to cart"
+              ></a>
+            </div>
+          </div>
+          <!-- card 2 -->
+          <div
+            class="popular__top popular_card bg-red-950 p-10 pt-24 rounded-md relative"
+          >
+            <img
+              src="assets/img/cart-2.png"
+              alt="popular_image"
+              class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500"
+            />
+            <p class="text-2xl">Lavender Bouquet</p>
+            <h3>The Skin Repair Specialist</h3>
+            <div>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+              <i class="ri-star-line text-gray-400"></i>
+              <i class="ri-star-line text-gray-400"></i>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-xl font-Lobster">1950/= ksh</p>
+            <a
+              href="app.html"
+              class="bg-brown-500 px-2 py-1 rounded-sm text-x1 ri-shopping-cart-fill"
+              title="Add to cart"
+            ></a>
+            </div>
+          </div>
+          <!-- card 3 -->
+          <div
+            class="popular__top popular_card bg-red-950 p-10 pt-24 rounded-md relative"
+          >
+            <img
+              src="assets/img/cart-2.png"
+              alt="popular_image"
+              class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500"
+            />
+            <p class="text-2xl">Spicy Vanilla</p>
+            <h3>The Ultimate Skin Booster</h3>
+            <div>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+              <i class="ri-star-line text-gray-400"></i>
+              <i class="ri-star-line text-gray-400"></i>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-xl font-Lobster">1850/= ksh</p>
+            <a
+              href="app.html"
+              class="bg-brown-500 px-2 py-1 rounded-sm text-x1 ri-shopping-cart-fill"
+              title="Add to cart"
+            ></a>
+            </div>
+          </div>
+          <!-- card4 -->
+          <div
+            class="popular__top popular_card bg-red-950 p-10 pt-24 rounded-md relative"
+          >
+            <img
+              src="assets/img/cart-2.png"
+              alt="popular_image"
+              class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500"
+            />
+            <p class="text-2xl">Tea Tree</p>
+            <h3>The Ultimate Skin Booster</h3>
+            <div>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+              <i class="ri-star-line text-gray-400"></i>
+              <i class="ri-star-line text-gray-400"></i>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-xl font-Lobster">1850/= ksh</p>
+            <a
+              href="app.html"
+              class="bg-brown-500 px-2 py-1 rounded-sm text-x1 ri-shopping-cart-fill"
+              title="Add to cart"
+            ></a>
+            </div>
+          </div>
+          <!-- card5 -->
+          <div
+            class="popular__top popular_card bg-red-950 p-10 pt-24 rounded-md relative"
+          >
+            <img
+              src="assets/img/cart-2.png"
+              alt="popular_image"
+              class="w-56 absolute -top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-500"
+            />
+            <p class="text-2xl">Rose Bloom</p>
+            <h3>The Ultimate Skin Booster</h3>
+            <div>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+              <i class="ri-star-line text-gray-400"></i>
+              <i class="ri-star-line text-gray-400"></i>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-xl font-Lobster">1850/= ksh</p>
+            <a
+              href="app.html"
+              class="bg-brown-500 px-2 py-1 rounded-sm text-x1 ri-shopping-cart-fill"
+              title="Add to cart"
+            ></a>
+            </div>
+          </div>
+                 </div>
+      </section>
+
+      <!--~~~~~~~~~~~~~~~ Review ~~~~~~~~~~~~~~~-->
+      <section id="review" class="relative mb-20 md:mb-28 overflow-hidden">
+        <div class="review__leaf absolute -top-8 -left-12 opacity-70">
+          <img
+            src="assets/img/leaf-4.png"
+            alt=" leaf_image"
+            class="w-40 md:w-52 xl:w-64"
+          />
+        </div>
+        <div
+          class="review__top flex flex-col items-center gap-3 text-center mb-10 md:mb-20"
+        >
+          <h2 class="title text-4xl font-Jost text-orange-950">
+            Customer Review
+          </h2>
+          <p class="max-w-2xl text-2xl">
+            Hear what our delighted customers say about our body butters.
+          </p>
+        </div>
+        <div class="review__swiper container">
+          <div class="swiper py-12">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <div
+                  class="review__swiper flex flex-col gap-5 bg-cream-700 rounded-md p-6"
+                >
+                  <p>
+                    610 Body Butter transformed my skin it's incredibly soft and
+                    radiant. I love the natural ingredients that leave my skin
+                    feeling pampered.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="assets/img/review-1.jpg"
+                      alt="review_image"
+                      class="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  <div class="ml-2 font-bold">
+                    <p class="text-brown-500">Mary Nganga</p>
+                    <p>Customer</p>
+                  </div>
+                  <i class="ri-double-quotes-r text-4xl ml-auto"></i>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div
+                  class="review__swiper flex flex-col gap-5 bg-cream-700 rounded-md p-6"
+                >
+                  <p>
+                    I've tried many moisturizers, but nothing compares to 610
+                    Body Butter. The hydration lasts all day and my skin has
+                    never felt better!
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="assets/img/review-2.jpg"
+                      alt="review_image"
+                      class="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  <div class="ml-2 font-bold">
+                    <p class="text-brown-500">Jane Wangari</p>
+                    <p>Customer</p>
+                  </div>
+                  <i class="ri-double-quotes-r text-4xl ml-auto"></i>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div
+                  class="review__swiper flex flex-col gap-5 bg-cream-700 rounded-md p-6"
+                >
+                  <p>
+                    From the moment I applied it, I felt the deep nourishment.
+                    My dry patches and fine lines have visibly improved.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="assets/img/review-3.jpg"
+                      alt="review_image"
+                      class="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  <div class="ml-2 font-bold">
+                    <p class="text-brown-500">Michael Mwangi</p>
+                    <p>Customer</p>
+                  </div>
+                  <i class="ri-double-quotes-r text-4xl ml-auto"></i>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div
+                  class="review__swiper flex flex-col gap-5 bg-cream-700 rounded-md p-6"
+                >
+                  <p>
+                    The luxurious texture and natural aroma make every
+                    application a spa experience. My skin glows like never
+                    before!
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="assets/img/review-4.jpg"
+                      alt="review_image"
+                      class="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  <div class="ml-2 font-bold">
+                    <p class="text-brown-500">Sarah Kinuthia</p>
+                    <p>Customer</p>
+                  </div>
+                  <i class="ri-double-quotes-r text-4xl ml-auto"></i>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="flex flex-col gap-5 bg-cream-700 rounded-md p-6">
+                  <p>
+                    610 Body Butter is pure indulgence. The blend of shea,
+                    cocoa, and avocado butters creates a protective barrier that
+                    keeps my skin moisturized all day.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="assets/img/review-3.jpg"
+                      alt="review_image"
+                      class="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  <div class="ml-2 font-bold">
+                    <p class="text-brown-500">Emily Chege</p>
+                    <p>Customer</p>
+                  </div>
+                  <i class="ri-double-quotes-r text-4xl ml-auto"></i>
+                </div>
+              </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--~~~~~~~~~~~~~~~ Footer ~~~~~~~~~~~~~~~-->
+    <footer class="bg-brown-900 pt-20 pb-10 md:pt-28 relative">
+      <!-- newsletter -->
+      <div
+        class="container text-white absolute top-0 right-0 left-0 -translate-y-1/2"
+      >
+        <div class="bg-brown-100 px-10 pt-5 pb-10 rounded-md text-2xl">
+          <h3>
+            <span class="text-brown-800">Subscribe</span> To Our Newsletter
+            <div class="flex flex-col gap-1 md:flex-row">
+              <input
+                type="email"
+                placeholder="Enter your Email Address"
+                class="w-full px-5 py-3 text-cream rounded-md outline-none text-x1"
+              />
+              <button
+                class="flex items-center justify-center gap-1 bg-brown-500 px-5 py-3 rounded-md hover:opacity-90 duration-300"
+              >
+                <span class="hover:text-orange-950">Subscribe</span>
+                <i class="ri-send-plane-2-fill"></i>
+              </button>
+            </div>
+          </h3>
+        </div>
+      </div>
+
+      <!-- social icon -->
+      <div class="footer__icon container mt-16 mb-10">
+        <div class="border-b border-brown-700 relative color-no">
+          <div
+            class="absolute top-0 transform -translate-y-1/2 left-0 right-0 max-w-36 mx-auto"
+          >
+            <div class="bg-brown-700 text-lg text-center space-x-2">
+              <i
+                class="ri-facebook-fill hover:text-gold-500 duration-300 cursor-pointer"
+              ></i>
+              <i
+                class="ri-twitter-x-fill hover:text-gold-500 duration-300 cursor-pointer text-base"
+              ></i>
+              <i
+                class="ri-instagram-fill hover:text-gold-500 duration-300 cursor-pointer"
+              ></i>
+              <i
+                class="ri-linkedin-fill hover:text-gold-500 duration-300 cursor-pointer"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer links -->
+      <div
+        class="footer__content container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 text-center md:text-start"
+      >
+        <!-- item1 -->
+        <div>
+          <div class="text-7xl text-cream-700 text-center inline-block">
+            <i class="ri-leaf-fill"></i>
+            <p class="font-Lobster text-xl sm:text-2xl">610 body butter</p>
+          </div>
+        </div>
+        <!-- item2 -->
+        <div>
+          <p class="mb-5 font-bold text-x1">Quick Links</p>
+          <div class="flex flex-col gap-1">
+            <a href="#">Our Butters</a>
+            <a href="#">Ingredients</a>
+            <a href="#">DIY Recipes</a>
+            <a href="#">Skin Benefits</a>
+            <a href="#">How To Use</a>
+          </div>
+        </div>
+        <!-- item3 -->
+        <div>
+          <p class="mb-5 font-bold text-x1">Popular Services</p>
+          <div class="flex flex-col gap-1">
+            <a href="#">Custom Blends</a>
+            <a href="#">Wholesale Orders</a>
+            <a href="#">Skin Consultations</a>
+            <a href="#">Gift Packaging</a>
+          </div>
+        </div>
+        <!-- item4 -->
+        <div>
+          <p class="mb-5 font-bold text-x1">Contact us</p>
+          <div class="flex flex-col gap-1">
+            <a href="tel:">0712345678</a>
+            <a href="mailto:610bodybutter@gmail.com">610bodybutter@gmail.com</a>
+            <br />
+            <p>1234 Nairobi, Kenya</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- copyright -->
+      <div class="copy__right container">
+        <p class="text-center mt-10 opacity-50">
+          Copyright &copy 2025 610 Body Butter. All rights reserved.
+        </p>
+      </div>
+
+      <!-- floral image -->
+      <div
+        class="footer__floral absolute bottom-0 left-0 opacity-20 pointer-events-none"
+      >
+        <img
+          src="assets/img/floral-1.png"
+          alt="floral_image"
+          class="w-full lg:w-1/2"
+        />
+      </div>
+    </footer>
+
+    <!--~~~~~~~~~~~~~~~ Scroll Up ~~~~~~~~~~~~~~~-->
+    <a
+      href="#"
+      class="fixed right-4 bottom-4 bg-brown-500 shadow-sm px-3 py-1 md:px-4 md:py-2 rounded-md text-lg z-50 hover:-translate-y-1 duration-300 hidden"
+      id="scroll-up"
+    >
+      Scroll Up <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--~~~~~~~~~~~~~~~ Swiper JS ~~~~~~~~~~~~~~~-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- scrollreveal -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+
+    <!--~~~~~~~~~~ mainjs ~~~~~~~~~~-->
+    <script src="main.js"></script>
+  </body>
+</html>
