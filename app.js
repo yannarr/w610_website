@@ -118,6 +118,7 @@ function addToCart(product, color, size){
             price: product.price,
             color: color.name,
             size: size,
+            image: color.mainImage,
             quantity: 1
         });
     }
@@ -128,14 +129,14 @@ function addToCart(product, color, size){
 function displayCart() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    const cartItemsContainer = document.querySelector(".cart-items");
+    const cartTableBody = document.querySelector(".cart-table tbody");
     const subtotalEL = document.querySelector(".subtotal");
     const grandTotalEL = document.querySelector(".grand-total");
 
-    cartItemsContainer.innerHTML = "";
+    cartTableBody.innerHTML = "";
 
     if (cart.length === 0) {
-        cartItemsContainer.innerHTML = "<p>Your cart is empty</p>";
+        cartTableBody.innerHTML = "<tr><td colspan='5'><p>Your cart is empty</p></td></tr>";
         subtotalEL.textContent = "$0";
         grandTotalEL.textContent = "$0";
         return;
@@ -147,24 +148,51 @@ function displayCart() {
         const itemTotal = parseFloat(item.price.replace("$", "")) * item.quantity;
         subtotal += itemTotal;
         
-        const cartItem = document.createElement("div");
+        const cartItem = document.createElement("tr");
         cartItem.classList.add("cart-item");
         cartItem.innerHTML = `
-        <div class="product">
-            <img src="${item.image}">
-            <div class="item-detail">
-                <p>${item.title}</p>
-                <div class="size-color-box">
-                    <span class="size">${item.size}</span>
-                    <span class="color">${item.color}</span>
+            <td class="product">
+                <img src="${item.image}" alt="${item.title}">
+                <div class="item-detail">
+                    <p>${item.title}</p>
+                    <div class="size-color-box">
+                        <span class="size">${item.size}</span>
+                        <span class="color">${item.color}</span>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <span class="price">${item.price}</span>
-        <div class="quantity"><input type="number" value="${item.quantity}" min="1" data-index="${index}"></div>
-        <span class="total-price">${itemTotal}</span>
-        <button class="remove" data-index="${index}"><i class="ri-close-line"></i></button>
+            </td>
+            <td class="price">${item.price}</td>
+            <td class="quantity"><input type="number" value="${item.quantity}" min="1" data-index="${index}"></td>
+            <td class="total-price">$${itemTotal.toFixed(2)}</td>
+            <td><button class="remove" data-index="${index}"><i class="ri-close-line"></i></button></td>
         `;
 
-        cartItemsContainer.appendChild(cartItem);
+        cartTableBody.appendChild(cartItem);
+
+        // Add event listener to remove button
+        const removeBtn = cartItem.querySelector(".remove");
+        removeBtn.addEventListener("click", () => {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+            } else {
+                cart.splice(index, 1);
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart(); // Refresh the cart display
+        });
+
+        // Add event listener to quantity input
+        const quantityInput = cartItem.querySelector(".quantity input");
+        quantityInput.addEventListener("change", (e) => {
+            const newQuantity = parseInt(e.target.value);
+            if (newQuantity > 0) {
+                cart[index].quantity = newQuantity;
+                localStorage.setItem("cart", JSON.stringify(cart));
+                displayCart(); // Refresh the cart display
+            }
+        });
     });
+
+    subtotalEL.textContent = `$${subtotal.toFixed(2)}`;
+    grandTotalEL.textContent = `$${subtotal.toFixed(2)}`;
+}
